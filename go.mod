@@ -1,4 +1,4 @@
-module github.com/cinarmert/json-resume-validator
+module github.com/lukew3/json-resume-validator
 
 go 1.13
 
