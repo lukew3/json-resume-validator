@@ -13,7 +13,7 @@ import (
 type ResumeValidator struct {
 	data     []byte
 	validate *validator.Validate
-	resume   Resume
+	Resume   Resume
 	filepath string
 	source   string
 }
@@ -69,7 +69,7 @@ func (rv *ResumeValidator) validateFromRaw() error {
 
 	log.Printf("unmarsheled the data, validating now..")
 	rv.validate = validator.New()
-	err = rv.validate.Struct(rv.resume)
+	err = rv.validate.Struct(rv.Resume)
 	return err
 }
 
@@ -81,7 +81,7 @@ func (rv *ResumeValidator) IsValid() bool {
 }
 
 func (rv *ResumeValidator) unmarshalData() error {
-	err := json.Unmarshal(rv.data, &rv.resume)
+	err := json.Unmarshal(rv.data, &rv.Resume)
 	if err != nil {
 		return errors.Wrap(err, "could not unmarshal data")
 	}
