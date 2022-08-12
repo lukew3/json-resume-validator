@@ -61,13 +61,13 @@ func (rv *ResumeValidator) validateFromRaw() error {
 		return errors.New("data/filepath not provided")
 	}
 
-	log.Printf("data is ready, unmarshaling to json")
+	log.Printf("data is ready, unmarshalling to json")
 	err := rv.unmarshalData()
 	if err != nil {
 		return errors.Wrap(err, "json error")
 	}
 
-	log.Printf("unmarsheled the data, validating now..")
+	log.Printf("unmarshalled the data, validating now..")
 	rv.validate = validator.New()
 	err = rv.validate.Struct(rv.Resume)
 	return err
