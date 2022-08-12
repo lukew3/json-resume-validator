@@ -24,8 +24,8 @@ func (ts *jsonTime) UnmarshalJSON(b []byte) error {
 }
 
 type interval struct {
-	StartDate jsonTime `json:"startDate" validate:"ltfield=EndDate"`
-	EndDate   jsonTime `json:"endDate" validate:"gtfield=StartDate"`
+	StartDate string `json:"startDate" validate:"ltfield=EndDate"`
+	EndDate   string `json:"endDate" validate:"gtfield=StartDate"`
 }
 
 // Resume holds the information according to schema
