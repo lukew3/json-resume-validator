@@ -142,12 +142,11 @@ type reference struct {
 }
 
 type project struct {
+	interval
 	Name		string		`json:"name"`
 	Description	string		`json:"description"`
 	Highlights	[]string	`json:"highlights"`
 	Keywords	[]string	`json:"keywords"`
-	StartDate	jsonTime	`json:"startDate" validate:"lte"`
-	EndDate		jsonTime	`json:"endDate" validate:"lte"`
 	Url		string		`json:"url" validate:"url"`
 	Roles		[]string	`json:"roles"`
 	Entity		string		`json:"entity"`
